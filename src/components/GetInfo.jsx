@@ -4,6 +4,7 @@ import { Form, Button } from "react-bootstrap"
 const GetInfo = ({history}) => {
  
     const [politics, setPolitics] = useState('')
+    const [showPolitics, setShowPolitics] = useState('')
     const [hover, setHover] = useState('')
    
     function handleClick(){
@@ -20,9 +21,10 @@ const GetInfo = ({history}) => {
                 <br />
                     <Form.Group>
                         <label
-                            onMouseEnter={() => setHover('conservative')}
+                            onMouseEnter={() => setHover('Liberal')}
                             onClick={() => {
                                 setPolitics("conservative")
+                                setShowPolitics("Liberal")
                             }}>
                             <Form.Check 
                                     type="radio"
@@ -34,9 +36,10 @@ const GetInfo = ({history}) => {
                         </label>
                         <br />
                         <label
-                            onMouseEnter={() => setHover('liberal')}
+                            onMouseEnter={() => setHover('Conservative')}
                             onClick={() => {
                                 setPolitics("liberal")
+                                setShowPolitics("Conservative")
                             }}>
                             <Form.Check 
                                     type="radio"
@@ -48,9 +51,10 @@ const GetInfo = ({history}) => {
                         </label>
                         <br />
                         <label
-                            onMouseEnter={() => setHover('moderate')}
+                            onMouseEnter={() => setHover('Moderate')}
                             onClick={() => {
                                 setPolitics("moderate")
+                                setShowPolitics("Moderate")
                             }}>
                             <Form.Check
                                     type="radio"
@@ -64,7 +68,7 @@ const GetInfo = ({history}) => {
                 </div>
                 <div className="info-div">
                     <h2>Show me a
-                        {politics ? ` ${politics} feed` : hover ? ` ${hover} feed` : '...'} {/* need to change this so it shows OPPOSITE of conservative/liberal */}
+                        {politics ? ` ${showPolitics} feed` : hover ? ` ${hover} feed` : '...'} {/* need to change this so it shows OPPOSITE of conservative/liberal */}
                     </h2>
                 </div>
             </div>

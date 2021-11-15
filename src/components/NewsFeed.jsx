@@ -20,7 +20,7 @@ const newsFeed = ({history, match}) => {
 
     return(
         <div>
-            <Button onClick={() => handleClick()}>Log Out</Button> 
+            <Button onClick={() => handleClick()}>Go Back</Button> 
             <h1>News for a {politics}</h1>
             <br />
             <NewsContainer politics={politics}/>
